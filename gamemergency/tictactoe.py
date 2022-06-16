@@ -7,7 +7,9 @@ class TicTacToe():
         ]
         self.PlayerTurn="O"
         self.Winner=None
-    def Player_O(self,x,y):
+    def Player_O(self,x:int,y:int):
+        if (not x in [0,1,2]) or (not y in [0,1,2]):
+            raise TicTacToeError('Wrong Coordinate')
         if self.PlayerTurn == "O":
             if self.board[y][x]==0:
                 self.board[y][x]=1
@@ -21,7 +23,9 @@ class TicTacToe():
                 raise TicTacToeError('Board is occupied')
         else:
             raise TicTacToeError('Wrong turn')
-    def Player_X(self,x,y):
+    def Player_X(self,x:int,y:int):
+        if (not x in [0,1,2]) or (not y in [0,1,2]):
+            raise TicTacToeError('Wrong Coordinate')
         if self.PlayerTurn == "X":
             if self.board[y][x]==0:
                 self.board[y][x]=-1
