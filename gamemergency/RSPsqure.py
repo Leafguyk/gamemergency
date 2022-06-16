@@ -9,6 +9,7 @@ class RSPsqure :
     def P_turn(self,rsp):
         if rsp==self.AI_choice and self.turn==0:
             self.AI_choice=random.choice(["R","S","P"])
+            self.turn=0
         if rsp==self.AI_choice and self.ahead=="P":
             self.Gameover=True
             return "Win"
@@ -38,4 +39,4 @@ class RSPsqure :
                 elif rsp=='S':
                     self.ahead="P"
                     self.AI_choice=random.choice(["R","S","P"])
-        self.turn+=1
+            self.turn+=1
