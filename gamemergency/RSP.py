@@ -34,6 +34,8 @@ class RSP:
                     return "Lose"
                 elif rsp == "S":
                     return "Win"
+        else:
+            raise RSPError("Wrong gamemode")
 
     def P2(self, p1, p2):
         if self.gamemode == "2P":
@@ -57,12 +59,6 @@ class RSP:
                     return "p1 Win"
                 elif p2 == "S":
                     return "p2 Win"
-        else:
-            raise RSPError("Wrong gamemode")
-
-    def AI_rsp(self):
-        if self.gamemode == "AI":
-            return self.AI_choice
         else:
             raise RSPError("Wrong gamemode")
 
