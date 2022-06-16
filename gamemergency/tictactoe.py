@@ -18,8 +18,9 @@ class TicTacToe():
                     self.Winner="O"
                     return True
             else:
-                return False
-        return False
+                raise TicTacToeError('Board is occupied')
+        else:
+            raise TicTacToeError('Wrong turn')
     def Player_X(self,x,y):
         if self.PlayerTurn == "X":
             if self.board[y][x]==0:
@@ -31,8 +32,9 @@ class TicTacToe():
                     self.Winner="X"
                     return True
             else:
-                return False
-        return False
+                raise TicTacToeError('Board is occupied')
+        else:
+            raise TicTacToeError('Wrong turn')
     def GameEnd(self):
         for i in range(3):
             k=0
@@ -59,3 +61,6 @@ class TicTacToe():
         return self.PlayerTurn
     def winner(self):
         return self.Winner
+
+class TicTacToeError(Exception):
+    pass
